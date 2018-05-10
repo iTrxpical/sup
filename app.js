@@ -21,12 +21,6 @@ client.on('message', message => {
     
     var guildid = message.guild.id
 
-currentprefix = db.fetch(`guildPrefix_${guildid}`)
-
-        if (message.content.toLowerCase() === 'prefix') {
-           message.reply("**Current Prefix (for this guild):**" + currentprefix)
-        }
-
     db.fetch(`guildPrefix_${guildid}`).then(i => {
 
         let prefix = i || '='
@@ -35,6 +29,12 @@ currentprefix = db.fetch(`guildPrefix_${guildid}`)
         let args = message.content.slice(prefix.length).trim().split(" ");
         let cmd = args.shift().toLowerCase();            
         
+    currentprefix = db.fetch(`guildPrefix_${guildid}`)
+
+        if (message.content.toLowerCase() === 'prefix') {
+           message.reply("**Current Prefix (for this guild):**" + currentprefix)
+        }
+
         if (!message.content.startsWith(prefix)) return;
 
         try {
