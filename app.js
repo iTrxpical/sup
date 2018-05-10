@@ -32,7 +32,7 @@ client.on('message', message => {
     currentprefix = db.fetch(`guildPrefix_${guildid}`)
 
         if (message.content.toLowerCase() === 'prefix') {
-           message.reply("**Current Prefix (for this guild):**" + currentprefix)
+           message.reply("**Current Prefix (for this guild): **" + currentprefix)
         }
 
         if (!message.content.startsWith(prefix)) return;
