@@ -35,7 +35,7 @@ client.on('message', message => {
            message.reply("**Current Prefix (for this guild): **" + currentprefix)
         }
         if (message.content.toLowerCase() === 'appeal') {
-           message.author.send("THIS IS WIP. PLEASE WAIT.")
+           message.author.send("THIS IS WIP. PLEASE WAIT.");
            wait();
            message.delete()
         }
