@@ -36,7 +36,6 @@ client.on('message', message => {
         }
         if (message.content.toLowerCase() === 'appeal') {
            message.author.send("THIS IS WIP. PLEASE WAIT.");
-           wait();
            message.delete()
         }
 
