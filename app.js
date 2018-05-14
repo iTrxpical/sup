@@ -26,11 +26,6 @@ client.on('message', message => {
     let args = message.content.slice(prefix.length).trim().split(" ");
     let cmd = args.shift().toLowerCase();  
 
-        if (message.content.toLowerCase() === 'appeal') {
-           message.author.send("THIS IS WIP. PLEASE WAIT.");
-           message.delete()
-        }
-
         try {
 
             let commandFile = require(`./commands/${cmd}.js`);
