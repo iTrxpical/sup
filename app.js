@@ -21,25 +21,10 @@ client.on('message', message => {
     
     var guildid = message.guild.id
 
-    db.fetch(`guildPrefix_${guildid}`).then(i => {
-
-        let prefix = i || '='
-
-        let msg = message.content.toLowerCase();
-        let args = message.content.slice(prefix.length).trim().split(" ");
-        let cmd = args.shift().toLowerCase();            
-        
-    currentprefix = db.fetch(`guildPrefix_${guildid}`)
-
-        if (message.content.toLowerCase() === 'prefix') {
-           message.reply("**Current Prefix (for this guild): **" + currentprefix)
-        }
         if (message.content.toLowerCase() === 'appeal') {
            message.author.send("THIS IS WIP. PLEASE WAIT.");
            message.delete()
         }
-
-        if (!message.content.startsWith(prefix)) return;
 
         try {
 
