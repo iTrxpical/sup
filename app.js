@@ -26,6 +26,8 @@ client.on('message', message => {
     let args = message.content.slice(prefix.length).trim().split(" ");
     let cmd = args.shift().toLowerCase();  
 
+     if (!message.content.startsWith(prefix)) return;
+
         try {
 
             let commandFile = require(`./commands/${cmd}.js`);
