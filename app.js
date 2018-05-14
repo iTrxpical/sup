@@ -40,8 +40,6 @@ client.on('message', message => {
             console.log(`${message.author.username} ran the command: ${cmd} and is being passed onto the handler...!`);
 
         }
-
-    })
 })
 
 client.login(process.env.TOKEN);
