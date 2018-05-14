@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const db = require('quick.db');
+const prefix = "";
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}! There are no apparent major bugs on my support bot.`);
@@ -20,6 +21,10 @@ client.on('message', message => {
     }
     
     var guildid = message.guild.id
+    
+    let msg = message.content.toLowerCase();
+    let args = message.content.slice(prefix.length).trim().split(" ");
+    let cmd = args.shift().toLowerCase();  
 
         if (message.content.toLowerCase() === 'appeal') {
            message.author.send("THIS IS WIP. PLEASE WAIT.");
