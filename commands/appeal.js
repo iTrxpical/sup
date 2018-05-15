@@ -40,7 +40,6 @@ var type = "";
           .catch(function(){
             message.channel.send('Time expired. Please try again.');
 	    then(m=>m.delete(10000))
-          });
       });
   }
 	       
