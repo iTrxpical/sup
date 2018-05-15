@@ -105,5 +105,3 @@ function embedBook() {
 setTimeout(embedBook,2e4)
        }
 }
-
-}
