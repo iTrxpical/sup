@@ -25,6 +25,26 @@ let blacklistedRole = message.guild.roles.find("name", "MUTED/SUSPENDED");
 	
 var type = "";	
 	
+	message.author.send('Please write your appeal to be un-muted. There must be serveral points which are stated in detail. Grammar is also appreciated. (This message will be deleted shortly)')
+	.then(m=>m.delete(10000))
+      .then(function(){
+        message.channel.awaitMessages(response => message.content, {
+          max: 1,
+          time: 300000,
+          errors: ['time'],
+        })
+        .then((collected) => {
+        let appeal = collected.first().content;
+	message.delete()
+          })
+          .catch(function(){
+            message.channel.send('Time expired. Please try again.');
+	    .then(m=>m.delete(10000))
+          });
+      });
+  }
+	       
+	       
 const collected = await message.channel.awaitMessages(answer => item.a.includes(answer.content.toLowerCase()));
     const winnerMessage = collected.first();
     return message.channel.send({embed: new Discord.RichEmbed()
