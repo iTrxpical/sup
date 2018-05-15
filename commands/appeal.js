@@ -102,5 +102,5 @@ function embedBook() {
     message.reply("Your booking has been placed! Expect a DM from our team shortly!")
 }
 setTimeout(embedBook,2e4)
-       }
+       })
 }
