@@ -41,7 +41,7 @@ var type = "";
             message.channel.send('Time expired. Please try again.');
 	    then(m=>m.delete(10000))
       });
-  }
+  
 	       
 	       
 const collected = message.channel.awaitMessages(answer => item.a.includes(answer.content.toLowerCase()));
