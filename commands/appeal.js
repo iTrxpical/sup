@@ -25,6 +25,15 @@ let blacklistedRole = message.guild.roles.find("name", "MUTED/SUSPENDED");
 	
 var type = "";	
 	
+const collected = await message.channel.awaitMessages(answer => item.a.includes(answer.content.toLowerCase()));
+    const winnerMessage = collected.first();
+    return message.channel.send({embed: new Discord.RichEmbed()
+                                 .setAuthor(`Winner: ${winnerMessage.author.tag}`, winnerMessage.author.displayAvatarURL)
+                                 .setTitle(`Correct Answer: \`${winnerMessage.content}\``)
+                                 .setFooter(`Appeal Included | Top Confidential`)
+                                 .setColor(message.guild.me.displayHexColor)
+                                })
+	       
 const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 60000 });
            message.channel.send("What plan do you wish to book? (`Gold`, `Silver` or `Bronze`)");
 	        collector.on('collect', message => {
