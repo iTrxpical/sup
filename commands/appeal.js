@@ -45,7 +45,7 @@ var type = "";
   }
 	       
 	       
-const collected = await message.channel.awaitMessages(answer => item.a.includes(answer.content.toLowerCase()));
+const collected = message.channel.awaitMessages(answer => item.a.includes(answer.content.toLowerCase()));
     const winnerMessage = collected.first();
     return message.channel.send({embed: new Discord.RichEmbed()
                                  .setAuthor(`Winner: ${winnerMessage.author.tag}`, winnerMessage.author.displayAvatarURL)
