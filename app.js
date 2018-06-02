@@ -16,12 +16,12 @@ client.on('message', message => {
     if (sender.bot) return;
     if (message.channel.type === 'dm') {
         
-    const name = message.guild.name
-    const owner = message.guild.owner
+    //const name = message.guild.name
+    //const owner = message.guild.owner
     //let invitechannel = client.channels.get("id", "449182354507038720")
     //const invitechannel = client.channels.find("id", "449182354507038720")
-    const randomchannel = message.guild.channels.first()
-    const randomchannelid = randomchannel.id
+    //const randomchannel = message.guild.channels.first()
+    //const randomchannelid = randomchannel.id
     var randomColor = Math.floor(Math.random() * 16777215).toString(16);
     //var channel = client.channels.get("449182354507038720")
   
@@ -31,9 +31,9 @@ client.on('message', message => {
     .setFooter("iBot | New Guild")
     .setTimestamp()
     .setThumbnail('https://cdn.discordapp.com/attachments/379006942875746306/451309167127560193/circle.png')
-    .setDescription("iBot has joined a new guild called, " + name + "! It is owned by " + owner + ".")
+    //.setDescription("iBot has joined a new guild called, " + name + "! It is owned by " + owner + ".")
     //.addFild("Invite:", `https://discord.gg/${invite.code}`)
-   .addFild("Random Channel ID", randomchannelid)
+   //.addFild("Random Channel ID", randomchannelid)
   
     let c = client.channels.get("449182354507038720")
     c.send(joinEmbed)
