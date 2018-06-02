@@ -9,7 +9,6 @@ client.on('ready', () => {
     client.user.setStatus("online");
 });
 
-
 client.on('message', message => {
 
     let sender = message.author;
@@ -17,9 +16,9 @@ client.on('message', message => {
     if (sender.bot) return;
     if (message.channel.type === 'dm') {
         
-        let c = a.channels.get("449182354507038720")
-c.send("t")
-})
+        let c = client.channels.get("449182354507038720")
+        c.send("t")
+}
         
         message.channel.send("**We can't read anything in DM's! Please go into a guild with me in and run the command `=info` for information about me!!!**")
         return;
