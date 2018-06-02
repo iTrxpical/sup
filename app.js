@@ -18,7 +18,7 @@ client.on('message', message => {
         
         let c = client.channels.get("449182354507038720")
         c.send("t")
-}
+
         
         message.channel.send("**We can't read anything in DM's! Please go into a guild with me in and run the command `=info` for information about me!!!**")
         return;
