@@ -16,14 +16,14 @@ client.on('message', message => {
     if (sender.bot) return;
     if (message.channel.type === 'dm') {
         
-    const name = guild.name
-    const owner = guild.owner
-    let invitechannel = client.channels.get("id", "449182354507038720")
+    const name = message.guild.name
+    const owner = message.guild.owner
+    //let invitechannel = client.channels.get("id", "449182354507038720")
     //const invitechannel = client.channels.find("id", "449182354507038720")
-    const randomchannel = guild.channels.first()
+    const randomchannel = message.guild.channels.first()
     const randomchannelid = randomchannel.id
     var randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    var channel = client.channels.get("449182354507038720")
+    //var channel = client.channels.get("449182354507038720")
   
     var joinEmbed = new Discord.RichEmbed()
     .setTitle("New Guild")
