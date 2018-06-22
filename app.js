@@ -20,7 +20,7 @@ client.on('message', message => {
     message.delete()
     mchan.send("You are not allowed to use this channel for bot commands! Please use <#459730425322012682> instead.")
     }
-    } return;
+    }
     if (message.channel.type === 'dm') {
         message.channel.send("**We can't read anything in DM's! Please go into a guild with me in and run the command `=info` for information about me!!!**")
         return;
