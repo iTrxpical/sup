@@ -15,6 +15,7 @@ client.on('message', message => {
     
     if (sender.bot) {
     if (!message.channel.id === '459730425322012682') {
+    print("lala")
     var mchan = message.channel
     message.delete()
     mchan.send("You are not allowed to use this channel for bot commands! Please use <#459730425322012682> instead.")
