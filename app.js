@@ -12,13 +12,14 @@ client.on('ready', () => {
 client.on('message', message => {
 
     let sender = message.author;
-
-    if (sender.bot) return;
+    
+    if (sender.bot) {
     if (!message.channel.id === '459730425322012682') {
     var mchan = message.channel
     message.delete()
     mchan.send("You are not allowed to use this channel for bot commands! Please use <#459730425322012682> instead.")
     }
+    } return;
     if (message.channel.type === 'dm') {
         message.channel.send("**We can't read anything in DM's! Please go into a guild with me in and run the command `=info` for information about me!!!**")
         return;
