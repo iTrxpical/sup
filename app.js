@@ -34,14 +34,14 @@ if (message.channel.type !== 'text') {
             topic: `!complete to close the ticket | Support for ${message.author.tag} | ID: ${message.author.id}`
         });
         let author = message.author;
-        const newChannel = new Discord.MessageEmbed()
+        const newChannel = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setAuthor(author.tag, author.displayAvatarURL())
             .setFooter('Support Ticket Created!')
             .addField('User', author)
             .addField('ID', author.id)
         await channel.send(newChannel);
-        const newTicket = new Discord.MessageEmbed()
+        const newTicket = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setAuthor(`Hello, ${author.username}`, author.displayAvatarURL())
             .setFooter('Support Ticket Created!')
@@ -50,13 +50,13 @@ if (message.channel.type !== 'text') {
         active.targetID = author.id;
     }
     channel = client.channels.get(active.channelID);
-    const dm = new Discord.MessageEmbed()
+    const dm = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setAuthor(`Thank you, ${message.author.username}`, message.author.displayAvatarURL())
         .setFooter(`Your message has been sent - A staff member will be in contact soon.`)
     await message.author.send(dm);
     if (message.content === '!complete') return;
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setDescription(message.content)
@@ -72,7 +72,7 @@ if (support) {
     let supportUser = client.users.get(support.targetID);
     if (!supportUser) return message.channel.delete();
     if (message.content.toLowerCase() === '!complete') {
-        const complete = new Discord.MessageEmbed()
+        const complete = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setAuthor(`Hey, ${supportUser.tag}`, supportUser.displayAvatarURL())
             .setFooter('Ticket Closed -- Guild Name Here')
@@ -80,7 +80,7 @@ if (support) {
         supportUser.send(complete);
         message.channel.delete();
         db.delete(`support_${support.targetID}`);
-        let inEmbed = new Discord.MessageEmbed()
+        let inEmbed = new Discord.RichEmbed()
             .setTitle('Ticket Closed!')
             .addField('Support User', `${supportUser.tag}`)
             .addField('Closer', message.author.tag)
@@ -88,7 +88,7 @@ if (support) {
         const staffChannel = client.channels.get('454616220382265346');
         staffChannel.send(inEmbed);
     }
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RicheEmbed()
         .setColor('RANDOM')
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setFooter(`Message Received - Alpha Development`)
