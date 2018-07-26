@@ -9,7 +9,7 @@ client.on('ready', () => {
     client.user.setStatus("online");
 });
 
-client.on('message', message => {
+client.on('message', async message => {
 
     let sender = message.author;
     
