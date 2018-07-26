@@ -13,6 +13,10 @@ client.on('message', async message => {
 
     let sender = message.author;
     
+    process.on("unhandledRejection", error => {
+    console.error("Unhandled promise rejection", error);
+});
+    
 if (message.author.bot) return;
 if (message.channel.type !== 'text') {
     let active = await db.fetch(`support_${message.author.id}`);
