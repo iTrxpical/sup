@@ -27,7 +27,6 @@ if (message.channel.type !== 'text') {
     if (!active || !found) {
         active = {};
         channel = await guild.channels.create(`${message.author.username}-${message.author.discriminator}`, {
-            parent: serverStats.ticketCategoryID,
             topic: `!complete to close the ticket | Support for ${message.author.tag} | ID: ${message.author.id}`
         });
         let author = message.author;
