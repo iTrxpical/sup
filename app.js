@@ -16,7 +16,7 @@ client.on('message', async message => {
 if (message.author.bot) return;
 if (message.channel.type !== 'text') {
     let active = await db.fetch(`support_${message.author.id}`);
-    let guild = message.guild;
+    let guild = client.guilds.get('444159749458755594');
     let channel, found = true;
     try {
         if (active) client.channels.get(active.channelID)
