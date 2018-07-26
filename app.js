@@ -4,7 +4,7 @@ const db = require('quick.db');
 const prefix = "[]";
 
 client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}! There are no apparent major bugs on my support bot!!!`);
+    console.log(`Logged in as ${client.user.tag}! There are no apparent major bugs on my support bot!`);
     client.user.setActivity('over people. | =info', { type: 'WATCHING' });
     client.user.setStatus("online");
 });
